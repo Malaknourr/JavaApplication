@@ -6,7 +6,6 @@ public class UserInfo {
     private String password;
 
     public Scanner input = new Scanner(System.in);
-
     public UserInfo() {
     }
 
@@ -70,19 +69,20 @@ public class UserInfo {
 
     public void setPassword() {
         boolean strong = false;
+        String tempPassword = "";  // Store temporary password
         do {
             System.out.print("Enter your password: ");
-            String password = input.nextLine().trim();
-            if (password.length() > 6) {
+            tempPassword = input.nextLine().trim();
+            if (tempPassword.length() > 6) {
                 strong = true;
-            }
-            else{
+            } else {
                 System.out.println("Password must contain at least 6 characters.");
             }
-        } while (!strong);// Continue until a valid password is entered
+        } while (!strong);
 
-        this.password = password;
+        this.password = tempPassword;
     }
+
 
     public String getFirstName() {
         return firstName;
