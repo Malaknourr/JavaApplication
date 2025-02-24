@@ -35,41 +35,10 @@ public class UserInfo {
         }
     }
 
-    //Validate Choices
-    public static int ValidChoice(int min, int max) {
-        Scanner scanner = new Scanner(System.in);
-        while (true) { // Loop until valid input is provided
-            System.out.print("Enter your choice (" + min + "-" + max + "): ");
-            String userInput = scanner.nextLine().trim(); // Read the user's choice as a string
-
-            try {
-                int choice = Integer.parseInt(userInput); // Try to parse the choice as an integer
-                if (choice >= min && choice <= max) {
-                    return choice; // Return the valid choice
-                } else {
-                    System.out.println("Invalid choice. Please enter a number between " + min + " and " + max + ".");
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a valid integer.");
-            }
-        }
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
 
     public void setPassword() {
         boolean strong = false;
-        String tempPassword = "";  // Store temporary password
+        String tempPassword;  // Store temporary password
         do {
             System.out.print("Enter your password: ");
             tempPassword = input.nextLine().trim();
@@ -86,14 +55,6 @@ public class UserInfo {
 
     public String getFirstName() {
         return firstName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getGender() {
-        return gender;
     }
 
     public String getPassword() {
@@ -125,7 +86,7 @@ public class UserInfo {
 
         // Validate Gender Choice
         System.out.println("What is your gender? \n 1- Male\n 2- Female\n 3- Prefer not to say");
-        int genderChoice = ValidChoice(1, 3);
+        int genderChoice = Main.ValidChoice(1, 3);
         if (genderChoice == 1) {
             gender = "Male";
         } else if (genderChoice == 2) {

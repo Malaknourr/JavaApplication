@@ -21,26 +21,9 @@ public class Journalpart {
     }
     
     // Getters and Setters
-    public String getJournalText() {
-        return journalText;
-    }
-
     public void setJournalText(String journalText) {
         this.journalText = journalText;
     }
-
-    public LocalDateTime getDateTime() {
-        return dateTime;
-    }
-
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
-    }
-
-    public String getPhotoPath() {
-        return photoPath;
-    }
-
     public void setPhotoPath(String photoPath) {
         this.photoPath = photoPath;
     }
@@ -113,8 +96,7 @@ public class Journalpart {
             System.out.println("2) Load an existing journal");
             System.out.println("3️) Display current journal");
             System.out.println("4️) Exit");
-            int choice = UserInfo.ValidChoice(1 , 4);
-            scanner.nextLine(); // Consume newline
+            int choice = Main.ValidChoice(1 , 4);
 
             switch (choice) {
                 case 1:
