@@ -64,13 +64,17 @@ public class Healthpart {
         // Keep asking until a valid integer is entered
         while (!validInput) {
             System.out.print("Enter the number of habits you want to stop: ");
-            String input = scanner.nextLine();
+            String input = scanner.nextLine().trim(); // Read the input as a string and trim whitespace
 
             try {
-                numHabits = Integer.parseInt(input);
-                validInput = true; // Exit the loop if parsing succeeds
+                numHabits = Integer.parseInt(input); // Try to parse the input as an integer
+                if (numHabits > 0) {
+                    validInput = true; // Exit the loop if parsing succeeds and the number is positive
+                } else {
+                    System.out.println("Invalid input. Please enter a positive number.");
+                }
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a valid number.");
+                System.out.println("Invalid input. Please enter a valid integer."); // Handle invalid input
             }
         }
 
@@ -78,10 +82,9 @@ public class Healthpart {
 
         for (int i = 0; i < numHabits; i++) {
             System.out.print("Enter habit " + (i + 1) + ": ");
-            wrongHabits[i] = scanner.nextLine();
+            wrongHabits[i] = scanner.nextLine(); // Collect each habit
         }
     }
-
     // Method to calculate progress in dropping habits
     public void calculateHabitProgress(int daysCompleted) {
         if (wrongHabits == null || wrongHabits.length == 0) {
@@ -172,7 +175,6 @@ public class Healthpart {
             System.out.println("5. Load Health Data from File");
             System.out.println("6. Calculate Habit Progress");
             System.out.println("7. Exit");
-            System.out.print("Enter your choice (1-7): ");
 
             int choice = Main.ValidChoice(1 , 7);
             switch (choice) {
@@ -196,7 +198,6 @@ public class Healthpart {
                 case 6:
                     System.out.print("Enter the number of days completed for habit tracking: ");
                     int daysCompleted = scanner.nextInt();
-                    scanner.nextLine(); // Consume the newline character
                     calculateHabitProgress(daysCompleted);
                     break;
                 case 7:

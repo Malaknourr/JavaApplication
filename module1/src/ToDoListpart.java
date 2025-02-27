@@ -149,7 +149,6 @@ public class ToDoListpart {
 
         // Display edit options
         System.out.println("1) Edit a Task\n2) Add a New Task\n3) Mark a Task as Complete");
-        System.out.print("Choose an option: ");
         int editChoice = Main.ValidChoice(1, 3); // Validate user input
 
         if (editChoice == 1) { // Edit a task
