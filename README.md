@@ -1,4 +1,4 @@
-# The LifeMate Application 
+# The LifeMate Application
  It is a comprehensive personal
  productivity tool designed to help users organize and manage
  their daily lives effectively. It combines three core
@@ -26,3 +26,6 @@
  intake, and sleep hours.
  The application allows users to track habits they want to
  break and monitor their progress over time.
+
+ ### Youtube Video for the App
+ https://youtu.be/fPySX5BfF1k?si=QqCEl4G6k9_e0_Y7
