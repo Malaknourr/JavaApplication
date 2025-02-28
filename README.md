@@ -27,5 +27,5 @@
  The application allows users to track habits they want to
  break and monitor their progress over time.
 
- ### Youtube Video for the App
+ ### > Youtube Video for the App
  https://youtu.be/fPySX5BfF1k?si=QqCEl4G6k9_e0_Y7
